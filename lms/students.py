@@ -49,11 +49,11 @@ def load_students():
         STUDENTS.append(dict(zip(student_fields, test_student)))
 
 def dump_studens():
-    with open('student_data.json', 'w') as file:
+    with open('lms/data/student_data.json', 'w') as file:
         json.dump(STUDENTS, file)
 
 def dump_csv():
-    with open('student_data.csv', 'w') as file:
+    with open('lms/data/student_data.csv', 'w') as file:
         writer = csv.DictWriter(file, fieldnames=student_fields)
         writer.writeheader()
         for student in STUDENTS:
@@ -61,6 +61,7 @@ def dump_csv():
 
 def load_csv(file_path='student_data.csv'):
     pass
+
 
 def load_from_json(file_path='student_data.json'):
     with open(file_path, 'r') as read_file:
